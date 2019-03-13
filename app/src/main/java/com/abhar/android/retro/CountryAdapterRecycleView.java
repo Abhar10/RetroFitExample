@@ -19,15 +19,15 @@ public class CountryAdapterRecycleView extends RecyclerView.Adapter<RecyclerView
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.adapter_country,viewGroup,false);
-        StudentViewHolder studentViewHolder = new StudentViewHolder(view)
-                ; return studentViewHolder;
+        CountryViewHolder countryViewHolder = new CountryViewHolder(view);
+        return countryViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         Country std=countryArrayList.get(i);
         String title=std.getName();
-        ((StudentViewHolder) viewHolder).mTextViewName.setText(title);
+        ((CountryViewHolder) viewHolder).mTextViewName.setText(title);
     }
 
     @Override
@@ -36,10 +36,9 @@ public class CountryAdapterRecycleView extends RecyclerView.Adapter<RecyclerView
     }
 
 
-    class StudentViewHolder extends RecyclerView.ViewHolder{
+    class CountryViewHolder extends RecyclerView.ViewHolder{
         private TextView mTextViewName;
-        RelativeLayout relativeLayout;
-        public StudentViewHolder(@NonNull View itemView) {
+        public CountryViewHolder(@NonNull View itemView) {
             super(itemView);
 
 
